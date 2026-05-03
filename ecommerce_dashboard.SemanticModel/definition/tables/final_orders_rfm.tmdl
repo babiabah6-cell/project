@@ -1,0 +1,649 @@
+table final_orders_rfm
+	lineageTag: 69fdb895-c25f-4f8a-87f6-700717fe9af9
+
+	measure 'Segment Color' = ```
+			
+			VAR CurrentSegment = SELECTEDVALUE('final_orders_rfm'[Customer_Segment])
+			RETURN
+			SWITCH( CurrentSegment,
+			    "Champions", "#2A9D8F",         -- Teal Green
+			    "Loyal Customers", "#264653",   -- Deep Navy
+			    "At Risk", "#E76F51",           -- Burnt Orange
+			    "Can't Lose Them", "#A8201A",   -- Deep Red
+			    "Hibernating", "#8D99AE",       -- Slate Gray
+			    "New Customers", "#E9C46A",     -- Saffron Yellow
+			    "#D1D1D1"                       -- Default Light Gray
+			)
+			
+			
+			
+			```
+		lineageTag: e3693dfa-5cb7-4a57-aa94-0c31746832ff
+
+	column order_id
+		dataType: string
+		lineageTag: f2e24ae5-ac26-4b63-b4ed-f19487a7d9f8
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 21ff1a61-8780-4633-87ce-d19584c938d6
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: 4c961f3b-a082-4a26-92b0-38eb47fd90f0
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1d135ec0-d4e7-4d69-b840-393376a70d3b
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 5137879e-2454-435f-ba7f-2d45b26d6317
+			defaultHierarchy: LocalDateTable_fb6075a0-a501-4e48-8c22-9a8665b53a1b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_approved_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1c3f4641-d7f2-4cab-948e-940399020adb
+		summarizeBy: none
+		sourceColumn: order_approved_at
+
+		variation Variation
+			isDefault
+			relationship: 7d172c3a-872f-4508-97ff-1a4d34a9710f
+			defaultHierarchy: LocalDateTable_9d36bf50-df02-4555-86d2-15ebd8922d6b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_carrier_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 41f1da09-976b-430a-8784-0f350f481c5b
+		summarizeBy: none
+		sourceColumn: order_delivered_carrier_date
+
+		variation Variation
+			isDefault
+			relationship: 9b113888-2d04-42f8-b0d8-fe97c0ea8bb4
+			defaultHierarchy: LocalDateTable_05552f36-7cbe-4653-aa6f-2cb455299369.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7a69ca71-f9f1-41a6-9154-216be47ab878
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		variation Variation
+			isDefault
+			relationship: 3b6cfb15-004d-4577-bfc7-d98e83f1f948
+			defaultHierarchy: LocalDateTable_80d3300a-7cf5-40c7-96e2-38a8ebd5375d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e41a8b2d-6bb8-4997-a072-8cac33aaed28
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: 89b1a20b-49a4-4fae-ad0f-11f31fd12b2e
+			defaultHierarchy: LocalDateTable_67dbe697-ad79-4ef6-9bbb-a9e844496354.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column customer_unique_id
+		dataType: string
+		lineageTag: 9078748c-a59d-4c15-b853-ce90a54c0ba3
+		summarizeBy: none
+		sourceColumn: customer_unique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_zip_code_prefix
+		dataType: int64
+		formatString: 0
+		lineageTag: 43272863-f729-414e-9fec-dc4b2fc7dc1c
+		summarizeBy: sum
+		sourceColumn: customer_zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: 95594f23-6fd2-48e4-ab37-bf7a99e232dd
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: f8873387-c5db-49e9-a950-a04b36073d71
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_sequential
+		dataType: int64
+		formatString: 0
+		lineageTag: 893b7095-7f7e-4213-b37c-972d29e739d8
+		summarizeBy: sum
+		sourceColumn: payment_sequential
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: string
+		lineageTag: c62849dd-8707-4194-93ec-d383c84502a1
+		summarizeBy: none
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_installments
+		dataType: int64
+		formatString: 0
+		lineageTag: f959c745-b118-4e47-8a63-2fb0ed02e0b0
+		summarizeBy: sum
+		sourceColumn: payment_installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_value
+		dataType: double
+		lineageTag: 053d522d-2b5f-43a2-9c4c-3c82dac9990a
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_item_id_x
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f2f2c87-2a7a-49eb-bc11-18bfa0e0bb41
+		summarizeBy: sum
+		sourceColumn: order_item_id_x
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id_x
+		dataType: string
+		lineageTag: 2d4951aa-9430-4a76-8d4e-596f6273c217
+		summarizeBy: none
+		sourceColumn: product_id_x
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id_x
+		dataType: string
+		lineageTag: 0bd83a2a-cdb5-48bd-81c5-406df4b7b44d
+		summarizeBy: none
+		sourceColumn: seller_id_x
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date_x
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0eb08ded-90c3-46b2-9e4b-3da87a3a1e07
+		summarizeBy: none
+		sourceColumn: shipping_limit_date_x
+
+		variation Variation
+			isDefault
+			relationship: 026844c3-e5e3-44a8-bc52-f256b7440504
+			defaultHierarchy: LocalDateTable_42f1ba88-2a07-4bd3-81bf-6dcfeae2ca66.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_x
+		dataType: double
+		lineageTag: 07f78d11-5cbd-4655-9b17-fc0c8fdc5fd2
+		summarizeBy: sum
+		sourceColumn: price_x
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value_x
+		dataType: double
+		lineageTag: a93d6828-e716-47a0-a9cf-2412a34699c2
+		summarizeBy: sum
+		sourceColumn: freight_value_x
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column review_id
+		dataType: string
+		lineageTag: 7dd8ee85-35fc-4e63-8582-a9510aa318e3
+		summarizeBy: none
+		sourceColumn: review_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 87f75066-c469-4622-9837-8484a96f01fd
+		summarizeBy: sum
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_title
+		dataType: string
+		lineageTag: 29d8c165-d756-446c-b559-26a937adedc5
+		summarizeBy: none
+		sourceColumn: review_comment_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_message
+		dataType: string
+		lineageTag: b4ba281f-8fbb-451e-96d9-865b7b5304dd
+		summarizeBy: none
+		sourceColumn: review_comment_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_creation_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68dd4a41-99bb-432f-bda6-7301914b407c
+		summarizeBy: none
+		sourceColumn: review_creation_date
+
+		variation Variation
+			isDefault
+			relationship: a42704d0-71ba-4b50-8fdb-cd4a6c5f4d7d
+			defaultHierarchy: LocalDateTable_3a2b588f-25de-4b13-9c73-56b7cf86a01e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_answer_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5daba05c-5123-435f-9223-a82b30111bb2
+		summarizeBy: none
+		sourceColumn: review_answer_timestamp
+
+		variation Variation
+			isDefault
+			relationship: aa4becee-32f6-436d-962f-b9e07005df2f
+			defaultHierarchy: LocalDateTable_cc5b2725-5a00-4a07-8d5b-a6651b9e76ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: a260b826-5e71-4266-845b-dbb7f3768ca5
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: 079fc2b6-d1d5-49bb-b43b-2d434b41bec7
+		summarizeBy: sum
+		sourceColumn: product_name_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_description_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: f4846354-bd09-49b8-a912-b2ab18e54313
+		summarizeBy: sum
+		sourceColumn: product_description_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_photos_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: fdcc12fc-8dab-4589-9d64-239bf82ae255
+		summarizeBy: sum
+		sourceColumn: product_photos_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_weight_g
+		dataType: int64
+		formatString: 0
+		lineageTag: 590de45e-61b1-4926-a37f-03f7a6086c7c
+		summarizeBy: sum
+		sourceColumn: product_weight_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_length_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 4000df27-86a2-4412-b28f-1f179a5598ba
+		summarizeBy: sum
+		sourceColumn: product_length_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_height_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: d10b91c5-4df6-4e95-a8a8-32d2166fd95f
+		summarizeBy: sum
+		sourceColumn: product_height_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_width_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c38a8ec-82c4-47b9-ae27-852d1dae0d3d
+		summarizeBy: sum
+		sourceColumn: product_width_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id_y
+		dataType: int64
+		formatString: 0
+		lineageTag: 68deca8d-2b6a-4a69-8ea9-8c08554ff2eb
+		summarizeBy: sum
+		sourceColumn: order_item_id_y
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id_y
+		dataType: string
+		lineageTag: b2420148-bc6b-4785-8819-a84065b8d4ce
+		summarizeBy: none
+		sourceColumn: product_id_y
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id_y
+		dataType: string
+		lineageTag: 7cded547-7659-4751-a904-eda1386439f9
+		summarizeBy: none
+		sourceColumn: seller_id_y
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date_y
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a9a34dc6-d1af-4a13-bc1f-fc93faf84f25
+		summarizeBy: none
+		sourceColumn: shipping_limit_date_y
+
+		variation Variation
+			isDefault
+			relationship: c9a51204-21f6-493f-a1ff-72607cedd7ab
+			defaultHierarchy: LocalDateTable_8e7bff1c-af29-4bce-a59e-e50e3cd561c8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_y
+		dataType: double
+		lineageTag: 6f30cb13-e313-4418-ac51-4b2e460cd701
+		summarizeBy: sum
+		sourceColumn: price_y
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value_y
+		dataType: double
+		lineageTag: 17b16cd4-ded8-447c-8779-470bf2fdb73d
+		summarizeBy: sum
+		sourceColumn: freight_value_y
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column delivery_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: b2c98f18-de28-4976-9e57-55371d735f0b
+		summarizeBy: sum
+		sourceColumn: delivery_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_delay_days
+		dataType: int64
+		formatString: 0
+		lineageTag: dc252f54-e34e-47ae-a74b-99c6a0a67f2e
+		summarizeBy: sum
+		sourceColumn: delivery_delay_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a8b6742-482b-4bf3-86b6-88236a4362fc
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 254bca11-1eb8-4d3d-9399-967047c4ab21
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: ec2e2f13-e405-46dc-9bbd-30faa2b60c2d
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 621185a3-dbf8-4792-b9e4-34895a75ce09
+		summarizeBy: none
+		sourceColumn: shipping_limit_date
+
+		variation Variation
+			isDefault
+			relationship: 23f1c112-9da3-4296-8b08-d605cfd2b797
+			defaultHierarchy: LocalDateTable_fc866f2f-71fd-4ea3-bd51-f33bc7100f8f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: e72995f0-74c3-4eb3-95e2-c810e975ef49
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: d46631ce-eac5-4da4-9415-339406bdd18d
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_order_value
+		dataType: double
+		lineageTag: 2af2aaeb-1e02-4ff9-aac7-2c38301b11fa
+		summarizeBy: sum
+		sourceColumn: total_order_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b5fec475-077e-403a-a6f0-73420a1cc4ad
+		summarizeBy: none
+		sourceColumn: order_month
+
+		variation Variation
+			isDefault
+			relationship: e1f0ddd8-bde6-4d52-9827-c42b244f4f30
+			defaultHierarchy: LocalDateTable_6cc94cad-616b-4698-9ae7-246c3e6534c0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Recency
+		dataType: int64
+		formatString: 0
+		lineageTag: aa4c69cd-4781-490b-b3b4-19338b72490c
+		summarizeBy: sum
+		sourceColumn: Recency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b5a6697-1b08-457a-9788-8caf506706bf
+		summarizeBy: sum
+		sourceColumn: Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monetary
+		dataType: double
+		lineageTag: fe8d42ba-d48f-426c-8aca-be01cd865bf2
+		summarizeBy: sum
+		sourceColumn: Monetary
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column R_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bb54164-7fab-4cad-bdf3-6358a9faa38a
+		summarizeBy: sum
+		sourceColumn: R_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column F_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: ce982c4a-0758-4ac1-a39a-cc72f0e88901
+		summarizeBy: sum
+		sourceColumn: F_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column M_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 55da79fb-7c33-47bb-9bd9-f6eae5446163
+		summarizeBy: sum
+		sourceColumn: M_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Segment = ```
+			
+			VAR R = 'final_orders_rfm'[R_Score]
+			VAR F = 'final_orders_rfm'[F_Score]
+			VAR M = 'final_orders_rfm'[M_Score]
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    /* 1. CHAMPIONS: Best customers across all metrics */
+			    R >= 4 && F >= 4 && M >= 4, "Champions",
+			
+			    /* 2. CAN'T LOSE THEM: High frequency but haven't bought in a long time */
+			    R = 1 && F >= 4, "Can't Lose Them",
+			
+			    /* 3. AT RISK: Were frequent spenders but declining activity */
+			    R <= 2 && F >= 3, "At Risk",
+			
+			    /* 4. LOYAL CUSTOMERS: Steady, frequent purchasers */
+			    R >= 3 && F >= 3, "Loyal Customers",
+			
+			    /* 5. NEW CUSTOMERS: High recency, but only 1 purchase (The Olist majority) */
+			    R >= 4 && F = 1, "New Customers",
+			
+			    /* 6. POTENTIAL LOYALISTS: Recent customers with some growth potential */
+			    R >= 4 && F <= 3, "Potential Loyalists",
+			
+			    /* 7. HIBERNATING: Low scores on all fronts; long-term inactivity */
+			    R <= 2 && F <= 2, "Hibernating",
+			
+			    /* DEFAULT: Anything that didn't fit the above */
+			    "Need Attention"
+			)
+			
+			```
+		lineageTag: a03d96da-0e90-460c-aff9-bde231070909
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition final_orders_rfm = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\LENOVO\OneDrive - Conocimiento en Tecnología de Información, SC\Desktop\ecommerce-analytics-platform\data\processed\final_orders_rfm.csv"),[Delimiter=",", Columns=59, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"customer_id", type text}, {"order_status", type text}, {"order_purchase_timestamp", type datetime}, {"order_approved_at", type datetime}, {"order_delivered_carrier_date", type datetime}, {"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type date}, {"customer_unique_id", type text}, {"customer_zip_code_prefix", Int64.Type}, {"customer_city", type text}, {"customer_state", type text}, {"payment_sequential", Int64.Type}, {"payment_type", type text}, {"payment_installments", Int64.Type}, {"payment_value", type number}, {"order_item_id_x", Int64.Type}, {"product_id_x", type text}, {"seller_id_x", type text}, {"shipping_limit_date_x", type datetime}, {"price_x", type number}, {"freight_value_x", type number}, {"review_id", type text}, {"review_score", Int64.Type}, {"review_comment_title", type text}, {"review_comment_message", type text}, {"review_creation_date", type datetime}, {"review_answer_timestamp", type datetime}, {"product_category_name", type text}, {"product_name_lenght", Int64.Type}, {"product_description_lenght", Int64.Type}, {"product_photos_qty", Int64.Type}, {"product_weight_g", Int64.Type}, {"product_length_cm", Int64.Type}, {"product_height_cm", Int64.Type}, {"product_width_cm", Int64.Type}, {"order_item_id_y", Int64.Type}, {"product_id_y", type text}, {"seller_id_y", type text}, {"shipping_limit_date_y", type datetime}, {"price_y", type number}, {"freight_value_y", type number}, {"delivery_time_days", Int64.Type}, {"delivery_delay_days", Int64.Type}, {"order_item_id", Int64.Type}, {"product_id", type text}, {"seller_id", type text}, {"shipping_limit_date", type datetime}, {"price", type number}, {"freight_value", type number}, {"total_order_value", type number}, {"order_month", type date}, {"Recency", Int64.Type}, {"Frequency", Int64.Type}, {"Monetary", type number}, {"R_Score", Int64.Type}, {"F_Score", Int64.Type}, {"M_Score", Int64.Type}, {"Customer_Segment", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Customer_Segment"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

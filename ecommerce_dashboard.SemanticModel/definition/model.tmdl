@@ -1,0 +1,42 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["final_orders","final_orders_rfm"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table final_orders
+ref table DateTableTemplate_0984c004-27bf-498a-9d1d-3e9e73af207a
+ref table LocalDateTable_38a744cf-8e0e-4f07-ab3d-24bd4fbb7616
+ref table LocalDateTable_38104ffb-3fe7-4232-a4b8-4448bd9aebdb
+ref table LocalDateTable_da15aa97-ce2f-4320-843b-935101419977
+ref table LocalDateTable_ac103b1f-5a6b-44c4-a3bc-563c1a18bd48
+ref table LocalDateTable_bdf39391-0201-4188-aea4-35d3bbe319bc
+ref table LocalDateTable_640b8797-d5ed-4cfa-94ff-6a83be0e219a
+ref table LocalDateTable_e0926c69-431c-4ea9-abec-eaec9c330c76
+ref table LocalDateTable_ff7b4fae-bab0-43ad-9198-b6f07e1c4134
+ref table LocalDateTable_7b00b286-778f-4901-b0db-9e4aa7ea07b1
+ref table LocalDateTable_c3a91036-ef23-42ab-afa2-030482dacf68
+ref table LocalDateTable_1a8509d4-242f-4dc7-b544-4edd9d0abf9b
+ref table final_orders_rfm
+ref table LocalDateTable_fb6075a0-a501-4e48-8c22-9a8665b53a1b
+ref table LocalDateTable_9d36bf50-df02-4555-86d2-15ebd8922d6b
+ref table LocalDateTable_05552f36-7cbe-4653-aa6f-2cb455299369
+ref table LocalDateTable_80d3300a-7cf5-40c7-96e2-38a8ebd5375d
+ref table LocalDateTable_67dbe697-ad79-4ef6-9bbb-a9e844496354
+ref table LocalDateTable_42f1ba88-2a07-4bd3-81bf-6dcfeae2ca66
+ref table LocalDateTable_3a2b588f-25de-4b13-9c73-56b7cf86a01e
+ref table LocalDateTable_cc5b2725-5a00-4a07-8d5b-a6651b9e76ad
+ref table LocalDateTable_8e7bff1c-af29-4bce-a59e-e50e3cd561c8
+ref table LocalDateTable_fc866f2f-71fd-4ea3-bd51-f33bc7100f8f
+ref table LocalDateTable_6cc94cad-616b-4698-9ae7-246c3e6534c0
+
+ref cultureInfo en-US
+

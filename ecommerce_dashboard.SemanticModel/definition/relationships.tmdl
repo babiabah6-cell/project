@@ -1,0 +1,110 @@
+relationship a101dbd3-cf0c-4189-b111-0a7d2589aa76
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_purchase_timestamp
+	toColumn: LocalDateTable_38a744cf-8e0e-4f07-ab3d-24bd4fbb7616.Date
+
+relationship fbc6a8b2-a411-4a25-a37c-8dc092e0c8a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_approved_at
+	toColumn: LocalDateTable_38104ffb-3fe7-4232-a4b8-4448bd9aebdb.Date
+
+relationship 0eb94507-1d6a-4d86-b558-2e39a69abb89
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_delivered_carrier_date
+	toColumn: LocalDateTable_da15aa97-ce2f-4320-843b-935101419977.Date
+
+relationship 88fc53d3-221c-4a48-94b9-67898d033b9b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_delivered_customer_date
+	toColumn: LocalDateTable_ac103b1f-5a6b-44c4-a3bc-563c1a18bd48.Date
+
+relationship 9cc47aeb-cd96-4a9c-b259-668b2d0944ea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_estimated_delivery_date
+	toColumn: LocalDateTable_bdf39391-0201-4188-aea4-35d3bbe319bc.Date
+
+relationship 90f81557-735b-45de-8119-01c9231f5edd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.shipping_limit_date_x
+	toColumn: LocalDateTable_640b8797-d5ed-4cfa-94ff-6a83be0e219a.Date
+
+relationship 6b93a11d-cf43-4bc2-800d-fca8e622cc26
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.review_creation_date
+	toColumn: LocalDateTable_e0926c69-431c-4ea9-abec-eaec9c330c76.Date
+
+relationship 42803345-9cc8-434e-ab89-5ad695ac5087
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.review_answer_timestamp
+	toColumn: LocalDateTable_ff7b4fae-bab0-43ad-9198-b6f07e1c4134.Date
+
+relationship 107f7cbf-88ae-4c96-baed-7b4d4b868db8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.shipping_limit_date_y
+	toColumn: LocalDateTable_7b00b286-778f-4901-b0db-9e4aa7ea07b1.Date
+
+relationship 363da501-c692-4b29-8d2f-ee6c523e1009
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.shipping_limit_date
+	toColumn: LocalDateTable_c3a91036-ef23-42ab-afa2-030482dacf68.Date
+
+relationship 2901eb0f-f75f-4593-8262-72820492c8f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders.order_month
+	toColumn: LocalDateTable_1a8509d4-242f-4dc7-b544-4edd9d0abf9b.Date
+
+relationship 5137879e-2454-435f-ba7f-2d45b26d6317
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_purchase_timestamp
+	toColumn: LocalDateTable_fb6075a0-a501-4e48-8c22-9a8665b53a1b.Date
+
+relationship 7d172c3a-872f-4508-97ff-1a4d34a9710f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_approved_at
+	toColumn: LocalDateTable_9d36bf50-df02-4555-86d2-15ebd8922d6b.Date
+
+relationship 9b113888-2d04-42f8-b0d8-fe97c0ea8bb4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_delivered_carrier_date
+	toColumn: LocalDateTable_05552f36-7cbe-4653-aa6f-2cb455299369.Date
+
+relationship 3b6cfb15-004d-4577-bfc7-d98e83f1f948
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_delivered_customer_date
+	toColumn: LocalDateTable_80d3300a-7cf5-40c7-96e2-38a8ebd5375d.Date
+
+relationship 89b1a20b-49a4-4fae-ad0f-11f31fd12b2e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_estimated_delivery_date
+	toColumn: LocalDateTable_67dbe697-ad79-4ef6-9bbb-a9e844496354.Date
+
+relationship 026844c3-e5e3-44a8-bc52-f256b7440504
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.shipping_limit_date_x
+	toColumn: LocalDateTable_42f1ba88-2a07-4bd3-81bf-6dcfeae2ca66.Date
+
+relationship a42704d0-71ba-4b50-8fdb-cd4a6c5f4d7d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.review_creation_date
+	toColumn: LocalDateTable_3a2b588f-25de-4b13-9c73-56b7cf86a01e.Date
+
+relationship aa4becee-32f6-436d-962f-b9e07005df2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.review_answer_timestamp
+	toColumn: LocalDateTable_cc5b2725-5a00-4a07-8d5b-a6651b9e76ad.Date
+
+relationship c9a51204-21f6-493f-a1ff-72607cedd7ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.shipping_limit_date_y
+	toColumn: LocalDateTable_8e7bff1c-af29-4bce-a59e-e50e3cd561c8.Date
+
+relationship 23f1c112-9da3-4296-8b08-d605cfd2b797
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.shipping_limit_date
+	toColumn: LocalDateTable_fc866f2f-71fd-4ea3-bd51-f33bc7100f8f.Date
+
+relationship e1f0ddd8-bde6-4d52-9827-c42b244f4f30
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final_orders_rfm.order_month
+	toColumn: LocalDateTable_6cc94cad-616b-4698-9ae7-246c3e6534c0.Date
+
