@@ -65,9 +65,16 @@ rfm['F_Score'] = pd.qcut(rfm['Frequency'].rank(method="first"), 5, labels=[1,2,3
 
 ---
 
-## ⏭️ Future Roadmap
-1. **Predictive Analytics:** Integrating `Scikit-learn` to build a churn prediction model.
-2. **Cloud Automation:** Moving the Python ETL to a cloud function for automated, scheduled data refreshes.
+---
+
+## ⏭️ Future Roadmap: Scalability & Automation
+My goal is to transition this from a static analysis to a fully automated production pipeline:
+
+1. **Automated ETL Pipeline:** Migrating the Python data cleaning scripts to **GitHub Actions** or **Apache Airflow** to automatically process new data as it arrives.
+2. **Cloud Integration:** Hosting the processed data in **Google BigQuery** or **AWS S3** to enable real-time dashboard refreshes in Power BI Service.
+3. **Predictive Churn Alerts:** Integrating a **Scikit-learn** machine learning model to automatically flag "At-Risk" customers before they churn, triggering automated email workflows.
+4. **API Integration:** Connecting the Logistics Dashboard directly to carrier APIs to track "Nearshore" shipping performance in real-time.
+
 
 ---
 **Author:** Babi Clovis Abah  
