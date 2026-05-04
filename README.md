@@ -70,5 +70,5 @@ rfm['F_Score'] = pd.qcut(rfm['Frequency'].rank(method="first"), 5, labels=[1,2,3
 2. **Cloud Automation:** Moving the Python ETL to a cloud function for automated, scheduled data refreshes.
 
 ---
-**Author:** [Your Name]  
+**Author:** Babi Clovis Abah  
 **Connect with me on [LinkedIn](Your-LinkedIn-URL)**
