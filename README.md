@@ -78,4 +78,4 @@ My goal is to transition this from a static analysis to a fully automated produc
 
 ---
 **Author:** Babi Clovis Abah  
-**Connect with me on [LinkedIn](Your-LinkedIn-URL)**
+**Connect with me on [LinkedIn]([Your-LinkedIn-URL](https://www.linkedin.com/in/babi-abah-061555406/))**
